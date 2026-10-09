@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni\Acs\Tests;
 
-use Dew\Acs\OpenApi\Api;
-use Dew\Acs\OpenApi\ApiDocs;
-use Dew\Acs\ResultProvider;
-use Dew\Acs\Tests\Fixtures\StubException;
+use ahmaddanni\Acs\OpenApi\Api;
+use ahmaddanni\Acs\OpenApi\ApiDocs;
+use ahmaddanni\Acs\ResultProvider;
+use ahmaddanni\Acs\Tests\Fixtures\StubException;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-import-type TApi from \Dew\Acs\OpenApi\Api
+ * @phpstan-import-type TApi from \ahmaddanni\Acs\OpenApi\Api
  */
 #[CoversClass(ResultProvider::class)]
 final class ResultProviderTest extends TestCase
