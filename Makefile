@@ -1,5 +1,5 @@
 ACS_ENDPOINT ?= https://api.alibabacloud.com
-ACS_METADATA_URL ?= https://github.com/dew-serverless/acs-metadata/releases/latest/download/php.tar.gz
+ACS_METADATA_URL ?= https://github.com/ahmaddanni/acs-metadata/releases/latest/download/php.tar.gz
 ACS_BUILD_DIR ?= tmp/
 PROTOC ?= protoc
 PROTO_SRC_DIR = protobuf
@@ -20,7 +20,7 @@ build-%-proto:
 	$(PROTOC) --php_out=$(PROTO_GEN_DIR) -I$(PROTO_SRC_DIR)/$* $(PROTO_SRC_DIR)/$*/*.proto
 	# Fix path of generated PHP files
 	PRODUCT=$(shell find ./src -type d -iname $* -maxdepth 1 -exec basename {} \;); \
-		[ -n "$$PRODUCT" ] || { echo "Could not find directory for $*"; rm -rf $(PROTO_GEN_DIR)/Dew/; exit 1; }; \
+		[ -n "$$PRODUCT" ] || { echo "Could not find directory for $*"; rm -rf $(PROTO_GEN_DIR)/ahmaddanni/; exit 1; }; \
 		rm -rf $(PROTO_GEN_DIR)/$$PRODUCT/{Messages,Metadata} && \
 		mv $(PROTO_GEN_DIR)/Dew/Acs/$$PRODUCT/* $(PROTO_GEN_DIR)/$$PRODUCT/ && \
 		rm -rf $(PROTO_GEN_DIR)/Dew/
