@@ -38,7 +38,7 @@ $client = new VpcClient([
 ]);
 
 $result = $client->createVpc([
-    'RegionId' => 'cn-shenzhen',
+    'RegionId' => 'ap-southeast-5',
 ]);
 
 echo $result['VpcId']; // retrieve the newly-created VPC ID.
