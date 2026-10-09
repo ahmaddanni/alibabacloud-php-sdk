@@ -27,7 +27,7 @@ Clients follow the naming convention of `<Product>Client`. For example, with
 VPC, let's create a new network for our awesome project:
 
 ```php
-use Dew\Acs\Vpc\VpcClient;
+use ahmaddanni\Acs\Vpc\VpcClient;
 
 $client = new VpcClient([
     'region' => 'ap-southeast-5',
