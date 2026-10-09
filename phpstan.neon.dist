@@ -12,7 +12,7 @@ parameters:
     level: max
     treatPhpDocTypesAsCertain: false
     ignoreErrors:
-        - '#Property Dew\\Acs\\OpenApi\\RPCStyleBuilder::\$docs is never read, only written.#'
+        - '#Property ahmaddanni\\Acs\\OpenApi\\RPCStyleBuilder::\$docs is never read, only written.#'
         -
             message: '#Parameter \#1 \$schema of static method [a-zA-Z0-9\\_]+::make\(\) expects array{.*}, array.* given.#'
             path: src/OpenApi/Schema.php
