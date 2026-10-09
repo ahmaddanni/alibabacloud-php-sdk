@@ -1,8 +1,8 @@
 <?php
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni\Acs\Tests;
 
-use Dew\Acs\JsonEncoder;
+use ahmaddanni\Acs\JsonEncoder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
