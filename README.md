@@ -1,10 +1,4 @@
-# Integrate Alibaba Cloud with your PHP application.
-
-[![Tests](https://github.com/dew-serverless/acs-sdk-php/actions/workflows/tests.yml/badge.svg)](https://github.com/dew-serverless/acs-sdk-php/actions/workflows/tests.yml)
-[![MIT License](https://img.shields.io/github/license/dew-serverless/acs-sdk-php)](https://github.com/dew-serverless/acs-sdk-php)
-[![OpenAPI metadata](https://img.shields.io/badge/OpenAPI-20251213-blue)](https://github.com/dew-serverless/acs-sdk-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/dew-serverless/acs-sdk-php)](https://github.com/dew-serverless/acs-sdk-php)
-[![Release](https://img.shields.io/github/v/release/dew-serverless/acs-sdk-php)](https://github.com/dew-serverless/acs-sdk-php)
+# Integrate Alibaba Cloud with your PHP apps.
 
 ⚠️ **Important:** This package is in the early stages of development and may
 undergo breaking changes at any time. If you plan to use this SDK in a
