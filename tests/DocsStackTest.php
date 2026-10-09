@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests;
 
-use Dew\Acs\DocsStack;
-use Dew\Acs\OpenApi\Api;
-use Dew\Acs\OpenApi\ApiDocs;
-use Dew\Acs\OpenApi\Info;
+use ahmaddanni\Acs\DocsStack;
+use ahmaddanni\Acs\OpenApi\Api;
+use ahmaddanni\Acs\OpenApi\ApiDocs;
+use ahmaddanni\Acs\OpenApi\Info;
 use Http\Client\Common\Plugin;
 use Mockery as m;
 use Nyholm\Psr7\Factory\Psr17Factory;
