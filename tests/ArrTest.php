@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni/\Acs\Tests;
 
-use Dew\Acs\Arr;
+use ahmaddanni/\Acs\Arr;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
