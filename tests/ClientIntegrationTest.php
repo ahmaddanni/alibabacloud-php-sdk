@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Dew\Acs\Tests;
 
-use Dew\Acs\AcsClient;
-use Dew\Acs\ApiDocsResolver;
-use Dew\Acs\Sts\StsClient;
+use ahmaddanni\Acs\AcsClient;
+use ahmaddanni\Acs\ApiDocsResolver;
+use ahmaddanni\Acs\Sts\StsClient;
 use Http\Mock\Client;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @phpstan-import-type TProductInfo from \Dew\Acs\ApiDocsResolver
- * @phpstan-import-type TConfig from \Dew\Acs\AcsClient
+ * @phpstan-import-type TProductInfo from \ahmaddanni\Acs\ApiDocsResolver
+ * @phpstan-import-type TConfig from \ahmaddanni\Acs\AcsClient
  */
 #[CoversClass(AcsClient::class)]
 final class ClientIntegrationTest extends TestCase
@@ -46,11 +46,11 @@ final class ClientIntegrationTest extends TestCase
         $client = new StsClient($this->makeConfig(['http_client' => $httpClient]));
         $client->getCallerIdentity();
         $request = $httpClient->getLastRequest();
-        $this->assertStringMatchesFormat('DewAcsPHP/%s (%s; PHP %s)', $request->getHeaderLine('User-Agent'));
+        $this->assertStringMatchesFormat('ahmaddanniAcsPHP/%s (%s; PHP %s)', $request->getHeaderLine('User-Agent'));
     }
 
     /**
-     * @return \Generator<string, class-string<\Dew\Acs\AcsClient>[]>
+     * @return \Generator<string, class-string<\ahmaddanni\Acs\AcsClient>[]>
      */
     public static function clientProvider(): \Generator
     {
@@ -60,8 +60,8 @@ final class ClientIntegrationTest extends TestCase
             /** @var TProductInfo $product */
             $name = ApiDocsResolver::getNormalizedProductName($product['code']);
 
-            /** @var class-string<\Dew\Acs\AcsClient> */
-            $fqdn = "\\Dew\\Acs\\{$name}\\{$name}Client";
+            /** @var class-string<\ahmaddanni\Acs\AcsClient> */
+            $fqdn = "\\ahmaddanni\\Acs\\{$name}\\{$name}Client";
 
             if (! class_exists($fqdn)) {
                 throw new \RuntimeException("Missing $name client.");
