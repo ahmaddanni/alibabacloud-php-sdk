@@ -18,7 +18,7 @@ signing, sparing you from the complexities of signature calculations.
 The SDK can be installed using _Composer_ with the following command:
 
 ```bash
-composer require dew-serverless/acs-sdk-php
+composer require ahmaddanni/alibabacloud-php-sdk
 ```
 
 ### Usage
