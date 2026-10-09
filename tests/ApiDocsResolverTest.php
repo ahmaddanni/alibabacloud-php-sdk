@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ahmaddanni/\Acs\Tests;
+namespace ahmaddanni\Acs\Tests;
 
-use ahmaddanni/\Acs\ApiDocsResolver;
+use ahmaddanni\Acs\ApiDocsResolver;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
