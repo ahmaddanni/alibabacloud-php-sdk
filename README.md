@@ -30,7 +30,7 @@ VPC, let's create a new network for our awesome project:
 use Dew\Acs\Vpc\VpcClient;
 
 $client = new VpcClient([
-    'region' => 'cn-shenzhen',
+    'region' => 'ap-southeast-5',
     'credentials' => [
         'key' => '<YOUR_ACCESS_KEY_ID>',
         'secret' => '<YOUR_ACCESS_KEY_SECRET>',
