@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni\Acs\Tests;
 
-use Dew\Acs\Result;
+use ahmaddanni\Acs\Result;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
