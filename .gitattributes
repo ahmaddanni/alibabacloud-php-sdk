@@ -1,0 +1,27 @@
+# Auto detect text files and perform LF normalization
+*         text=auto
+
+# PHP files
+*.php     text eol=lf diff=php
+
+# Protobuf
+protobuf  export-ignore
+/src/Tablestore/Metadata/*.php  -text diff linguist-generated
+/src/Tablestore/Messages/*.php  linguist-generated
+/src/Sls/Metadata/*.php  -text diff linguist-generated
+/src/Sls/Messages/*.php  linguist-generated
+
+# Development
+/benchmark  export-ignore
+/build      export-ignore
+/tests      export-ignore
+Makefile    export-ignore
+
+# Configuration
+.editorconfig          text eol=lf export-ignore
+.gitattributes         export-ignore
+.github                export-ignore
+.gitignore             export-ignore
+.php-cs-fixer.dist.php export-ignore
+phpstan.neon.dist      text eol=lf export-ignore
+phpunit.xml.dist       text eol=lf export-ignore

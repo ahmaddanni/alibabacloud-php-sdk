@@ -1,0 +1,65 @@
+{
+    "name": "dew-serverless/acs-sdk-php",
+    "description": "Unofficial Alibaba Cloud PHP SDK.",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/psr7": "^2.7",
+        "php-http/client-common": "^2.7",
+        "php-http/discovery": "^1.0",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory": "^1.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.59",
+        "google/protobuf": "^4.27",
+        "mockery/mockery": "^1.6",
+        "nyholm/psr7": "^1.0",
+        "php-http/mock-client": "^1.0",
+        "phpstan/phpstan": "^1.11",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^11.2",
+        "rector/rector": "^1.1",
+        "symfony/var-exporter": "^7.1"
+    },
+    "suggest": {
+        "ext-lz4": "Allows Protobuf compression with lz4 in SLS",
+        "ext-zstd": "Allows Protobuf compression with zstd in SLS",
+        "google/protobuf": "Required for Tablestore management."
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dew\\Acs\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dew\\Acs\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Li Zhineng",
+            "email": "im@zhineng.li"
+        }
+    ],
+    "scripts": {
+        "format": "php-cs-fixer fix",
+        "test": "phpunit",
+        "refactor": "rector",
+        "test:style": "php-cs-fixer fix --dry-run",
+        "test:static": "phpstan analyse",
+        "test:refactor": "rector --dry-run",
+        "test:all": [
+            "@test",
+            "@test:style",
+            "@test:static",
+            "@test:refactor"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": false
+    }
+}

@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package acs.tablestore;
+
+option php_namespace = "Dew\\Acs\\Tablestore\\Messages";
+option php_metadata_namespace = "Dew\\Acs\\Tablestore\\Metadata";
+
+message Error {
+  required string code = 1;
+  optional string message = 2;
+}
+
+message CapacityUnit {
+  optional int32 read = 1;
+  optional int32 write = 2;
+}

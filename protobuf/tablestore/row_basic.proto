@@ -1,0 +1,61 @@
+syntax = "proto2";
+
+package acs.tablestore.row.basic;
+
+option php_namespace = "Dew\\Acs\\Tablestore\\Messages";
+option php_metadata_namespace = "Dew\\Acs\\Tablestore\\Metadata";
+
+import "row.proto";
+
+message GetRowRequest {
+  required string table_name = 1;
+  required bytes primary_key = 2;
+  repeated string columns_to_get = 3;
+  optional TimeRange time_range = 4;
+  optional int32 max_versions = 5;
+  optional bytes filter = 7;
+  optional string start_column = 8;
+  optional string end_column = 9;
+  optional bytes token = 10;
+}
+
+message GetRowResponse {
+  required ConsumedCapacity consumed = 1;
+  required bytes row = 2;
+}
+
+message PutRowRequest {
+  required string table_name = 1;
+  required bytes row = 2;
+  required Condition condition = 3;
+  optional ReturnContent return_content = 4;
+}
+
+message PutRowResponse {
+  required ConsumedCapacity consumed = 1;
+  optional bytes row = 2;
+}
+
+message UpdateRowRequest {
+  required string table_name = 1;
+  required bytes row_change = 2;
+  required Condition condition = 3;
+  optional ReturnContent return_content = 4;
+}
+
+message UpdateRowResponse {
+  required ConsumedCapacity consumed = 1;
+  optional bytes row = 2;
+}
+
+message DeleteRowRequest {
+  required string table_name = 1;
+  required bytes primary_key = 2;
+  required Condition condition = 3;
+  optional ReturnContent return_content = 4;
+}
+
+message DeleteRowResponse {
+  required ConsumedCapacity consumed = 1;
+  optional bytes row = 2;
+}

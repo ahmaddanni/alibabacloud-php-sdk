@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Dew\Acs\Linkedmall;
+
+use Dew\Acs\AcsException;
+
+final class LinkedmallException extends AcsException
+{
+    //
+}

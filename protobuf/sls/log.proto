@@ -1,0 +1,34 @@
+syntax = "proto2";
+
+package acs.sls;
+
+option php_namespace = "Dew\\Acs\\Sls\\Messages";
+option php_metadata_namespace = "Dew\\Acs\\Sls\\Metadata";
+
+message LogGroupList {
+  repeated LogGroup groups = 1;
+}
+
+message LogGroup {
+  repeated Log logs = 1;
+  optional string topic = 3;
+  optional string source = 4;
+  optional string machine_uuid = 5;
+  repeated LogTag tags = 6;
+}
+
+message Log {
+  required uint32 time = 1;
+  repeated LogContent contents = 2;
+  optional fixed32 time_ns = 4;
+}
+
+message LogContent {
+  required string key = 1;
+  required bytes value = 2;
+}
+
+message LogTag {
+  required string key = 1;
+  required string value = 2;
+}

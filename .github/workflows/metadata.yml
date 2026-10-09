@@ -1,0 +1,84 @@
+name: Update OpenAPI metadata
+
+on:
+  schedule:
+    - cron: "30 3 * * 6"   # At 03:30 on Saturday
+  workflow_dispatch:
+
+jobs:
+  metadata:
+    name: Update metadata
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          coverage: none
+
+      - name: Install Dependencies
+        run: composer update --prefer-stable --no-interaction --no-progress --ansi
+
+      - name: Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch metadata
+        run: make fetch-meta
+
+      - name: Commit metadata changes
+        run: |
+          if ! git diff --quiet data/products.php; then
+            git add data/products.php
+            git commit -m "update products"
+          fi
+          if ! git diff --quiet data/; then
+            git add .
+            git commit -m "update metadata"
+          fi
+
+      - name: Build clients
+        run: make build-clients
+
+      - name: Commit updated clients
+        run: |
+          if ! git diff --quiet src/; then
+            git add .
+            git commit -m "build clients"
+          fi
+
+      - name: Update badge
+        run: |
+          sed -i -E "s#^\[!\[OpenAPI metadata\]\(.*\)\]#\
+          [![OpenAPI metadata](https://img.shields.io/badge/OpenAPI-$(date '+%Y%m%d')-blue)]#" \
+            README.md
+          if ! git diff --quiet README.md; then
+            git add README.md
+            git commit -m "update badge"
+          fi
+
+      - name: Create a Pull Request
+        run: |
+          if ! git diff --quiet $GITHUB_SHA..HEAD; then
+            NOW="$(date '+%Y%m%d')"
+            git branch update-metadata-$NOW
+            git push origin update-metadata-$NOW
+            gh pr create \
+              --base main \
+              --head update-metadata-$NOW \
+              --title "Update OpenAPI metadata $NOW" \
+              --body "Here are the API changes during the week, check the metadata and update with the latest Alibaba Cloud APIs."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_SHA: ${{ github.sha }}

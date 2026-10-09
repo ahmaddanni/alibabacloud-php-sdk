@@ -1,0 +1,25 @@
+includes:
+    - vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+    paths:
+        - src
+    excludePaths:
+        - src/Tablestore/Messages
+        - src/Tablestore/Metadata
+        - src/Sls/Messages
+        - src/Sls/Metadata
+    level: max
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        - '#Property Dew\\Acs\\OpenApi\\RPCStyleBuilder::\$docs is never read, only written.#'
+        -
+            message: '#Parameter \#1 \$schema of static method [a-zA-Z0-9\\_]+::make\(\) expects array{.*}, array.* given.#'
+            path: src/OpenApi/Schema.php
+        -
+            message: '#PHPDoc tag @param for parameter \$key with type key-of<T of array> is not subtype of native type int\|string.#'
+            path: src/Arr.php
+        -
+            identifier: function.notFound
+            path: src/Sls/Lz4.php
+            reportUnmatched: false

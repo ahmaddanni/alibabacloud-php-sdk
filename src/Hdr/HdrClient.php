@@ -1,0 +1,78 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Dew\Acs\Hdr;
+
+use Dew\Acs\AcsClient;
+
+/**
+ * @method \Dew\Acs\Result registerServers(array $arguments = [])
+ * @method \Http\Promise\Promise registerServersAsync($arguments = [])
+ * @method \Dew\Acs\Result unregisterServer(array $arguments = [])
+ * @method \Http\Promise\Promise unregisterServerAsync($arguments = [])
+ * @method \Dew\Acs\Result describeServer(array $arguments = [])
+ * @method \Http\Promise\Promise describeServerAsync($arguments = [])
+ * @method \Dew\Acs\Result describeServers(array $arguments = [])
+ * @method \Http\Promise\Promise describeServersAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSitePairs(array $arguments = [])
+ * @method \Http\Promise\Promise describeSitePairsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSite(array $arguments = [])
+ * @method \Http\Promise\Promise describeSiteAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteSitePair(array $arguments = [])
+ * @method \Http\Promise\Promise deleteSitePairAsync($arguments = [])
+ * @method \Dew\Acs\Result createSitePair(array $arguments = [])
+ * @method \Http\Promise\Promise createSitePairAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSitePair(array $arguments = [])
+ * @method \Http\Promise\Promise describeSitePairAsync($arguments = [])
+ * @method \Dew\Acs\Result enableReplication(array $arguments = [])
+ * @method \Http\Promise\Promise enableReplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result disableReplication(array $arguments = [])
+ * @method \Http\Promise\Promise disableReplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result testFailover(array $arguments = [])
+ * @method \Http\Promise\Promise testFailoverAsync($arguments = [])
+ * @method \Dew\Acs\Result testCleanup(array $arguments = [])
+ * @method \Http\Promise\Promise testCleanupAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRecoveryPoints(array $arguments = [])
+ * @method \Http\Promise\Promise describeRecoveryPointsAsync($arguments = [])
+ * @method \Dew\Acs\Result changeRecoveryPoint(array $arguments = [])
+ * @method \Http\Promise\Promise changeRecoveryPointAsync($arguments = [])
+ * @method \Dew\Acs\Result commitFailover(array $arguments = [])
+ * @method \Http\Promise\Promise commitFailoverAsync($arguments = [])
+ * @method \Dew\Acs\Result forcedFailover(array $arguments = [])
+ * @method \Http\Promise\Promise forcedFailoverAsync($arguments = [])
+ * @method \Dew\Acs\Result triggerReversedRegister(array $arguments = [])
+ * @method \Http\Promise\Promise triggerReversedRegisterAsync($arguments = [])
+ * @method \Dew\Acs\Result describeInfrastructures(array $arguments = [])
+ * @method \Http\Promise\Promise describeInfrastructuresAsync($arguments = [])
+ * @method \Dew\Acs\Result reversedEnableReplication(array $arguments = [])
+ * @method \Http\Promise\Promise reversedEnableReplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result reversedDisableReplication(array $arguments = [])
+ * @method \Http\Promise\Promise reversedDisableReplicationAsync($arguments = [])
+ * @method \Dew\Acs\Result failback(array $arguments = [])
+ * @method \Http\Promise\Promise failbackAsync($arguments = [])
+ * @method \Dew\Acs\Result createRecoveryPlan(array $arguments = [])
+ * @method \Http\Promise\Promise createRecoveryPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result deleteRecoveryPlan(array $arguments = [])
+ * @method \Http\Promise\Promise deleteRecoveryPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRecoveryPlan(array $arguments = [])
+ * @method \Http\Promise\Promise describeRecoveryPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result describeRecoveryPlans(array $arguments = [])
+ * @method \Http\Promise\Promise describeRecoveryPlansAsync($arguments = [])
+ * @method \Dew\Acs\Result updateRecoveryPlan(array $arguments = [])
+ * @method \Http\Promise\Promise updateRecoveryPlanAsync($arguments = [])
+ * @method \Dew\Acs\Result describeAvailableInstanceTypes(array $arguments = [])
+ * @method \Http\Promise\Promise describeAvailableInstanceTypesAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTasks(array $arguments = [])
+ * @method \Http\Promise\Promise describeTasksAsync($arguments = [])
+ * @method \Dew\Acs\Result describeTask(array $arguments = [])
+ * @method \Http\Promise\Promise describeTaskAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSitePairStatistics(array $arguments = [])
+ * @method \Http\Promise\Promise describeSitePairStatisticsAsync($arguments = [])
+ * @method \Dew\Acs\Result describeSummary(array $arguments = [])
+ * @method \Http\Promise\Promise describeSummaryAsync($arguments = [])
+ */
+final class HdrClient extends AcsClient
+{
+    //
+}
