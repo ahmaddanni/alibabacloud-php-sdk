@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni/\Acs\Tests;
 
-use Dew\Acs\AcsException;
-use Dew\Acs\Result;
+use ahmaddanni/\Acs\AcsException;
+use ahmaddanni/\Acs\Result;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
