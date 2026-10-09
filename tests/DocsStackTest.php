@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dew\Acs\Tests;
+namespace ahmaddanni\Acs\Tests;
 
 use ahmaddanni\Acs\DocsStack;
 use ahmaddanni\Acs\OpenApi\Api;
