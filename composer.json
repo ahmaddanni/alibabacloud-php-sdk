@@ -1,6 +1,6 @@
 {
-    "name": "dew-serverless/acs-sdk-php",
-    "description": "Unofficial Alibaba Cloud PHP SDK.",
+    "name": "ahmaddanni/alibabacloud-php-sdk",
+    "description": "Unofficial AlibabaCloud-PHP-SDK.",
     "type": "library",
     "require": {
         "php": "^8.2",
@@ -30,18 +30,18 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dew\\Acs\\": "src/"
+            "ahmaddanni\\Acs\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dew\\Acs\\Tests\\": "tests/"
+            "ahmaddanni\\Acs\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
-            "name": "Li Zhineng",
-            "email": "im@zhineng.li"
+            "name": "ahmaddanni",
+            "email": "ah@gmail.com"
         }
     ],
     "scripts": {
